@@ -1,0 +1,19 @@
+<h1>Photos</h1>
+
+<%= form_tag photos_path, method: :get do %>
+  <%= label_tag :q, 'Email:' %>
+  <%= text_field_tag :q, '', placeholder: 'Email a buscar' %>
+  <%= submit_tag 'Buscar' %>
+<% end %>
+
+<br>
+
+<div class="photos">
+  <%= render @photos %>
+</div>
+
+<div class="call-to-action">
+  <%= link_to "Upload your photo", new_photo_path %>
+  <%= link_to "Mis fotos", mis_fotos_path %>
+</div>
+

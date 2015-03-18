@@ -1,0 +1,4 @@
+<p>
+  <%= image_tag photo.asset.url(:thumb) %>
+  <br><span>by: <%= link_to photo.user.email, user_path(photo.user) %></span>
+</p>

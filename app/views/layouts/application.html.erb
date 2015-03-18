@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MiniInstagram</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'layouts/alerts' %>
+  <%= yield %>
+
+  <% if current_user %>
+    <%= link_to "Salir", destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to "Ingresar", new_user_session_path %>
+    <%= link_to "Registrarse", new_user_registration_path %>
+  <% end %>
+
+  <%= link_to 'Home', root_path %>
+  <%= link_to 'About', page_path('about') %>
+  <%= link_to 'FAQ', page_path('faq') %>
+  <%= link_to 'Help', page_path('help') %>
+  <%= link_to 'Contact', page_path('contact') %>
+
+</body>
+</html>

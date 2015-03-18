@@ -1,0 +1,16 @@
+<h1>Resultados de búsqueda: <%= params[:q] %></h1>
+
+<div class="photos">
+
+  <% for photo in @photos %>
+
+    <div class="photo">
+      <%= image_tag photo.asset.url(:thumb) %>
+      <br><span>by: <%= photo.user.email %></span>
+
+      <hr>
+    </div>
+
+  <% end %>
+
+</div>
