@@ -1,0 +1,7 @@
+<% if current_user %>
+  <% if current_user.following?(@user) %>
+    Ya sigues a <%= @user.email %>
+  <% else %>
+    <%= button_to "Seguir", followings_path(user_id: @user.id), remote: true %>
+  <% end %>
+<% end %>
