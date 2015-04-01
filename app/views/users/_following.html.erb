@@ -1,7 +1,7 @@
 <% if current_user %>
   <% if current_user.following?(@user) %>
-    Ya sigues a <%= @user.email %>
+    <%= button_to 'No seguir', following_path(@user), method: :delete, remote: true %>
   <% else %>
-    <%= button_to "Seguir", followings_path(user_id: @user.id), remote: true %>
+    <%= button_to "Seguir", followings_path(id: @user), remote: true %>
   <% end %>
 <% end %>
