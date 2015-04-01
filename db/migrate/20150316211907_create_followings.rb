@@ -6,7 +6,7 @@ class CreateFollowings < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    add_foreign_key :followings, :users
-    add_foreign_key :followings, :following_user
+    # add_foreign_key :followings, :users
+    # add_foreign_key :followings, :following_user
   end
 end
