@@ -2,8 +2,14 @@ class PhotosController < ApplicationController
   before_action :authenticate_user!
 
   def index
+    if params[:q].empty?
+      @photos=Photo.order('created_at DESC').limit(20)
+      
+      else
     @photos = Photo.includes(:user).where("users.email" => params[:q]).all
+    end  
   end
+
 
   def my
     @photos = current_user.photos
