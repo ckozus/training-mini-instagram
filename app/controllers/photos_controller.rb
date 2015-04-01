@@ -4,10 +4,9 @@ class PhotosController < ApplicationController
   def index
     if params[:q].empty?
       @photos=Photo.order('created_at DESC').limit(20)
-      
-      else
-    @photos = Photo.includes(:user).where("users.email" => params[:q]).all
-    end  
+    else
+      @photos = Photo.includes(:user).where("users.email" => params[:q]).all
+    end
   end
 
 
