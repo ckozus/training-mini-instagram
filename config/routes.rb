@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   resources :photos, only: [:index, :create, :new]
   resources :users, only: [:show]
   resources :followings, only: [:create]
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
