@@ -6,7 +6,7 @@
 
     <div class="photo">
       <%= image_tag photo.asset.url(:thumb) %>
-      <br><span>by: <%= photo.user.email %></span>
+      <br><span>by: <%= link_to photo.user.email, user_path(photo.user) %></span>
 
       <hr>
     </div>
